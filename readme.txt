@@ -1,10 +1,12 @@
 Les fichiers d'entête contiennent des commentaires succincts du programme. Pour plus de 
 détails, veuillez consulter les .cpp.
 La bibliotèque gnuplot-iostream a été utilisé pour l'affichage graphique de la courbe de
-bezier. Elle dépend de certaines bibliotèques dynamique pour fonctionner. Pour les installer, exécutez :
-sudo apt install gnuplot (ou installer gnuplot)
+bezier. Elle dépend de certaines bibliotèques dynamiques procurées par le package 'libgnuplot-iostream-dev'
+pour fonctionner. Pour les installer sous 'ubuntu', exécutez :
 sudo apt (votre gestionnaire de paquets) install libgnuplot-iostream-dev
-Pour compiler le code exécutez la commande : g++ -std=c++17 -o prog *.cpp -lboost_iostreams -lboost_system -lboost_filesystem
+Si vous êtes sous un autre système d'exploitation veuillez chercher et installé ce package.
+
+Pour avoir un rendu plus interactif, veuillez installer gnuplot
 
 Le programme résultant demande les coordonnées de 3 points par lesquels la courbe de bezier doit
 passer. Le programme effectue 3 demandes. A chacune d'elle, entrez les coordonnées de même
