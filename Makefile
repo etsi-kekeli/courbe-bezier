@@ -1,22 +1,20 @@
-CC = g++
-DLINK = -lboost_iostreams -lboost_system -lboost_filesystem
+CXX = g++
+LDFLAGS = -lboost_iostreams -lboost_system -lboost_filesystem
+BUILD_DIR=build
+SRC = $(wildcard *.cpp)
+# OBJ = $(SRC:.cpp=.o)
+OBJ := $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(notdir $(SRC)))
+TEST := $(BUILD_DIR)/test_program
 
-test.o: test.cpp
-	$(CC) -c test.cpp
-ConstruitCourbe.o: ConstruitCourbe.cpp
-	$(CC) -c ConstruitCourbe.cpp
-CourbeBezier.o: CourbeBezier.cpp
-	$(CC) -c CourbeBezier.cpp
-Matrice.o: Matrice.cpp
-	$(CC) -c Matrice.cpp
-Vecteur.o: Vecteur.cpp
-	$(CC) -c Vecteur.cpp
-test_program: test.o ConstruitCourbe.o Matrice.o Vecteur.o CourbeBezier.o
-	$(CC) -std=c++17 $^ $(DLINK) -o $@
+$(TEST): $(OBJ)
+	$(CXX) -std=c++17 $(OBJ) $(LDFLAGS) -o $@
+
+$(BUILD_DIR)/%.o: %.cpp
+	$(CXX) -std=c++17 -o $@ -c $<
 
 clean:
-	rm -f *.o test_program
+	rm -f $(BUILD_DIR)/*
 
 .PHONY: clean rebuild
 
-rebuild: clean test_program
+rebuild: clean $(TEST)

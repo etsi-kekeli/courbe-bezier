@@ -1,6 +1,5 @@
 #include "CourbeBezier.h"
 #include "gnuplot-iostream.h"
-// g++ main.cpp -std=c++11 -DWITHOUT_NUMPY -I/usr/local/include/python2.7 -lpython2.7
 
 CourbeBezier::CourbeBezier(int deg, int dim, Vecteur pol[])
 {
