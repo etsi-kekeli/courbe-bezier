@@ -8,7 +8,7 @@ Si vous êtes sous un autre système d'exploitation veuillez chercher et install
 
 Pour avoir un rendu plus interactif, veuillez installer gnuplot
 
-Le programme résultant demande les coordonnées de 3 points par lesquels la courbe de bezier doit
+Le programme de test résultant demande les coordonnées de 3 points par lesquels la courbe de bezier doit
 passer. Le programme effectue 3 demandes. A chacune d'elle, entrez les coordonnées de même
 nature (abscisse en 1er, ordonnées en 2e puis côte en dernier) de ces 3 points.
 Si les points sont (1, 1, 1), (2, 4, 8) et (3, 2, 3), on entre 
